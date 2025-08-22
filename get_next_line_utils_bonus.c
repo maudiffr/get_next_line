@@ -35,6 +35,10 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
+/* Extracts the "left" part of the string, i.e., the complete line up to
+   and including the newline if present. This is the part returned by
+   get_next_line.*/
+
 char	*ft_left(char *str)
 {
 	int		i;
@@ -57,6 +61,10 @@ char	*ft_left(char *str)
 	left[i] = '\0';
 	return (left);
 }
+
+/* Builds the "right" part of the string, i.e., what remains after the
+   returned line. Frees the old string and keeps only the leftover for
+   the next call. */
 
 char	*ft_new_str(char *str)
 {

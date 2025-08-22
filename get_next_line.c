@@ -12,6 +12,10 @@
 
 #include "get_next_line.h"
 
+/* Reads chunks from the file (BUFFER_SIZE bytes) and appends them to the
+   existing leftover string. Stops reading when a newline is found or
+   when there is nothing left to read. */
+
 char	*read_and_join(int fd, char *str)
 {
 	int			ret;
@@ -38,6 +42,10 @@ char	*read_and_join(int fd, char *str)
 	}
 	return (str);
 }
+
+/* Main function that reads from a file descriptor and returns the next line.
+   It uses a static variable to keep track of leftover data between calls.
+   Return NULL when the end of file is reached or an error. */
 
 char	*get_next_line(int fd)
 {
